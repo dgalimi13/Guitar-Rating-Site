@@ -1,11 +1,31 @@
 <h1>Make a new Guitar</h1>
 
-<%= form_for(@user) do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+<%= form_for(@guitar) do |f| %>
+    <div>
+    <%= f.label :type %>
+    <%= f.text_field :type %>
+    </div>
+    <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    </div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <p> Select a Make that exists </p>
+    <div> 
+    <%= f.collection_select :make_id, Make.all, :id, :name %>
 
-    <%= f.submit "Sign Up" %>
+    </div>
+
+  
+
+    <p> Or create a new Make: </p>
+    <div>
+    f.fields_for :make
+
+    </div>
+
+    <%= f.submit "Create a Guitar" %>
     <% end %>
+
+    t.integer "make_id", null: false
+    t.integer "user_id", null: false
