@@ -19,7 +19,13 @@ def show
 end 
 
 def index
-
+    if params[:guitar_id]
+        @guitar = Guitar.find_by_id(params[:guitar_id])
+        @reviews = @guitar.reviews 
+    else
+        
+    @reviews =  Review.all
+    end
 end 
 
 def review_params

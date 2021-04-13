@@ -1,0 +1,7 @@
+<h1>All the Reviews</h1>
+
+<ol>
+<% @reviews.each do |r| %>
+    <li><%= r.guitar.kind%>: - <%= r.title%> - <%= r.stars%></li> <br>
+<% end %>
+</ol>
