@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_04_12_184943) do
 
   create_table "guitars", force: :cascade do |t|
-    t.string "type"
+    t.string "kind"
     t.string "description"
     t.integer "make_id", null: false
     t.integer "user_id", null: false

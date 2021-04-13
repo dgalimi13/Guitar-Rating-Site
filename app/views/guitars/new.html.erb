@@ -2,8 +2,8 @@
 
 <%= form_for(@guitar) do |f| %>
     <div>
-    <%= f.label :type %>
-    <%= f.text_field :type %>
+    <%= f.label :kind %>
+    <%= f.text_field :kind %>
     </div>
     <div>
     <%= f.label :description %>
@@ -20,12 +20,12 @@
 
     <p> Or create a new Make: </p>
     <div>
-    f.fields_for :make
-
+    <%= f.fields_for :make do |m| %>
+        <%= m.label :name %>
+        <%= m.text_field :name %>
+        <% end %>
     </div>
-
+        <br>
     <%= f.submit "Create a Guitar" %>
     <% end %>
 
-    t.integer "make_id", null: false
-    t.integer "user_id", null: false
