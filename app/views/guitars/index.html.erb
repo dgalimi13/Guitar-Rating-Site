@@ -1,1 +1,10 @@
-all the guitars
+<h1>All the Guitars</h1>
+
+<% @guitars.each do |g| %> 
+
+    <h2><%= g.kind %> - <%= g.make.name %> </h2>
+    <%= link_to "Write a review", new_guitar_review_path(g.id) %>
+    <div>
+    <p><%= g.description %></p>
+    </div>
+    <% end %> 
