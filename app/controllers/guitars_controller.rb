@@ -1,5 +1,9 @@
 class GuitarsController < ApplicationController
 
+def index
+
+end 
+
 def new
 @guitar = Guitar.new
 @guitar.build_make
