@@ -19,5 +19,9 @@ class Guitar < ApplicationRecord
     end 
   end
 
+  def kind_and_make
+    "#{kind} - #{make.name}"
+  end 
+
 end
  
