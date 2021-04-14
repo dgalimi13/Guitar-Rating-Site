@@ -1,8 +1,22 @@
-<h1>Add a Review for <%= @review.guitar.kind 
-%> - <%= @review.guitar.make.name %></h1>
+<% if params[:guitar_id] %>
+    <h1>Add a Review for <%= @review.guitar.kind 
+    %> - <%= @review.guitar.make.name %></h1>
+<% else %>
+    <h1>Create a review</h1>
+<% end %>
 
 <%= form_for(@review) do |f| %>
-    <div>
+    <% if params[:guitar_id] %>
+        <%= f.hidden_field :guitar_id %>
+        <% else %>
+        <div>
+            <%= f.label :guitar_id, "Select a Guitar" %>
+            <%= f.collection_select :guitar_id, 
+            Guitar.all, :id, :kind, include_blank: 
+            true %>
+        </div>
+        <% end %>
+        <div>
         <%= f.label :stars %>
         <%= f.number_field :stars, min:0, max:5 %>
     </div>

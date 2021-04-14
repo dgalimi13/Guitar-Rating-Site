@@ -12,11 +12,9 @@
 
     <p> Select a Make that exists </p>
     <div> 
-    <%= f.collection_select :make_id, Make.all, :id, :name %>
+    <%= f.collection_select :make_id, Make.all, :id, :name, include_blank: 'Select One'%>
 
     </div>
-
-  
 
     <p> Or create a new Make: </p>
     <div>
