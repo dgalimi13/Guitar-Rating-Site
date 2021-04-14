@@ -8,6 +8,12 @@ class Guitar < ApplicationRecord
   validates :kind, presence: true
   validate :not_a_duplicate
 
+  scope :order_by_rating, -> {left_joins(:reviews).group(:id).order('avg(stars) desc')}
+
+    def self.alpha
+      order(:kind)
+    end 
+
 
     def make_attributes=(attributes)
       make = Make.find_or_create_by(attributes) if !attributes['name'].empty?

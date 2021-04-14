@@ -17,7 +17,7 @@
         <div>
             <%= f.label :guitar_id, "Select a Guitar" %>
             <%= f.collection_select :guitar_id, 
-            Guitar.all, :id, :kind_and_make, include_blank: 
+            Guitar.alpha, :id, :kind_and_make, include_blank: 
             true %>
         </div>
         <% end %>
