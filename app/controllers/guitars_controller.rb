@@ -1,4 +1,5 @@
 class GuitarsController < ApplicationController
+    # before_action :set_guitar, only:[:show, :edit, :update]
 
 def index
 @guitars = Guitar.all
@@ -20,6 +21,7 @@ def create
 end 
 
 def show
+    @guitar = Guitar.find_by_id(params[:id])
 end
 
 private
@@ -27,5 +29,10 @@ private
 def guitar_params
     params.require(:guitar).permit(:kind, :description, :make_id, make_attributes: [:name])
 end 
+
+# def set_guitar
+#     @guitar = Guitar.find_by(params[:id])
+#     redirect_to guitars_path if !@guitar
+#  end
 
 end
