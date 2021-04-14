@@ -1,5 +1,7 @@
 <h1>Make a new Guitar</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @guitar}   %>
+
 <%= form_for(@guitar) do |f| %>
     <div>
     <%= f.label :kind %>

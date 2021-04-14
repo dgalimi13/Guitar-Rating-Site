@@ -5,6 +5,8 @@ class Guitar < ApplicationRecord
   has_many :users, through: :reviews
   accepts_nested_attributes_for :make
 
+  validates :kind, presence: true
+
     def make_attributes(attributes)
       make = Make.find_or_create_by(attributes) if !name.empty
     end
