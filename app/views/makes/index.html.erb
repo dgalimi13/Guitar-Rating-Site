@@ -1,1 +1,7 @@
-all the makes
+<h1>All the Makes</h1>
+
+<ol>
+  <% @makes.each do |make| %>
+    <li><%= make.name%></li>
+  <% end %>
+</ol>
