@@ -1,10 +1,4 @@
-<% if params[:guitar_id] %>
-    <h1>Add a Review for <%= @review.guitar.kind 
-    %> - <%= @review.guitar.make.name %></h1>
-<% else %>
-    <h1>Create a review</h1>
-<% end %>
-
+<%=  display_header(@review)%>
 
 <%= render partial: 'layouts/errors', locals: {object: @review}   %>
 
