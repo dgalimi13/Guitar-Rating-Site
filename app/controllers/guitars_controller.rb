@@ -16,6 +16,7 @@ class GuitarsController < ApplicationController
         if @guitar.save
         redirect_to guitar_path(@guitar)
         else
+            @guitar.build_make
             render :new
         end
     end 
