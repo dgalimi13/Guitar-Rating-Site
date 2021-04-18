@@ -3,4 +3,9 @@
 <h2><%= @guitar.kind%> - <%= @guitar.make.name %> </h2>
 <div>
 <p><%= @guitar.description %></p>
+
+<h3>Added by: <%= @guitar.user.username %> </h3>
+
+<%= link_to "Edit #{@guitar.kind} " " - " " #{@guitar.make.name}", edit_guitar_path(@guitar) if @guitar.user == current_user%>
+
 </div>
