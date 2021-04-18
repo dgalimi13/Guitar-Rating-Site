@@ -6,6 +6,7 @@ class GuitarsController < ApplicationController
     end 
 
     def new
+        redirect_if_not_logged_in
     @guitar = Guitar.new
     @guitar.build_make
     end
